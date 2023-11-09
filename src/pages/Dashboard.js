@@ -2,6 +2,10 @@ import { faSackDollar, faWallet } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import logo from "../assets/logo.png"
+import Bar from '../charts/Bar'
+import LineChart from '../charts/Linechart'
+import MultipleBar from '../charts/MultipleBar'
+
 
 function Dashboard() {
   return (
@@ -195,7 +199,7 @@ function Dashboard() {
                         </div>
 
                     </div>
-                    <div className=' row-span-4 rounded-xl border-gray-100 border shadow-lg'>
+                    <div className=' row-span-3 rounded-xl border-gray-100 border shadow-lg'>
                     <div className='pt-4 pl-4 flex justify-between'>
                         <div className='flex justify-between'>
                             <h1 className='p-1 font-display font-bold text-xl flex justify-start'>Highest Revenue Earned</h1>
@@ -222,6 +226,9 @@ function Dashboard() {
                         <div className='pt-4 pr-4'>
                         <button type="button" class="text-gray-700 bg-white  focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-2 py-1.5 mr-1 mb-1 border hover:bg-gray-700  hover:text-white border-gray-700 dark:bg-white dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 h-10 w-28">All Time</button>
                         </div>
+                        </div>
+                        <div className='pt-8'>
+                            <Bar/>
                         </div>
                     </div>
                     <div className=' col-span-2 row-span-2  rounded-xl grid grid-rows-3 grid-cols-5 gap-1'>
@@ -304,24 +311,66 @@ function Dashboard() {
                     </div>
                     <div className=' col-span-2 row-span-3 rounded-xl border-gray-100 border shadow-lg'>
                     <div className='pt-4 pl-4'>
-                            <h1 className='p-1 font-display font-bold text-xl'>Consumer Activity</h1>
+                            <h1 className='p-1 font-display font-bold text-xl'>Consumer Analysis</h1>
                         </div>
                         <div className='flex justify-end'>
-                        <div className='pt-4 pr-4'>
-                        <button type="button" class="text-gray-700 bg-white  focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-2 py-1.5 mr-1 mb-1 border border-gray-700 dark:bg-white hover:bg-gray-700  hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 h-10 w-28">Past Week</button>
+                        <div className=' pr-4'>
+                        <button type="button" class="text-gray-700 bg-white  focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-2 py-1.5 mr-1  border border-gray-700 dark:bg-white hover:bg-gray-700  hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 h-10 w-28">Past Week</button>
                         </div>
-                        <div className='pt-4 pr-2'>
-                        <button type="button" class="text-gray-700 bg-white  focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-2 py-1.5 mr-1 mb-1 border border-gray-700 dark:bg-white hover:bg-gray-700  hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 h-10 w-28">Past Month</button>
+                        <div className=' pr-2'>
+                        <button type="button" class="text-gray-700 bg-white  focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-2 py-1.5 mr-1  border border-gray-700 dark:bg-white hover:bg-gray-700  hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 h-10 w-28">Past Month</button>
                         </div>
-                        <div className='pt-4 pr-2'>
-                        <button type="button" class="text-gray-700 bg-white  focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-2 py-1.5 mr-1 mb-1 border border-gray-700 hover:bg-gray-700  hover:text-white dark:bg-white dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 h-10 w-28">Past year</button>
+                        <div className=' pr-2'>
+                        <button type="button" class="text-gray-700 bg-white  focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-2 py-1.5 mr-1  border border-gray-700 hover:bg-gray-700  hover:text-white dark:bg-white dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 h-10 w-28">Past year</button>
                         </div>
-                        <div className='pt-4 pr-4'>
-                        <button type="button" class="text-gray-700 bg-white  focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-2 py-1.5 mr-1 mb-1 border hover:bg-gray-700  hover:text-white border-gray-700 dark:bg-white dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 h-10 w-28">All Time</button>
+                        <div className=' pr-4'>
+                        <button type="button" class="text-gray-700 bg-white  focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-2 py-1.5 mr-1  border hover:bg-gray-700  hover:text-white border-gray-700 dark:bg-white dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 h-10 w-28">All Time</button>
                         </div>
                         </div>
+                        <div class="text-sm font-medium text-center text-gray-700 border-b border-gray-200 dark:text-gray-700 dark:border-gray-700">
+    <ul class="flex flex-wrap ">
+        <li class="mr-2">
+            <a href="#" class="inline-block p-2 pl-8 border-b-2 border-transparent rounded-t-lg hover:text-gray-700 hover:border-gray-300 dark:hover:text-gray-300">Activity</a>
+        </li>
+        <li class="mr-2">
+            <a href="#" class="inline-block p-2 pl-8 text-blue-600 border-b-2 border-blue-600 rounded-t-lg active dark:text-blue-500 dark:border-blue-500" aria-current="page">Stock</a>
+        </li>
+        <li class="mr-2">
+            <a href="#" class="inline-block p-2 pl-8 border-b-2 border-transparent rounded-t-lg hover:text-gray-700 hover:border-gray-300 dark:hover:text-gray-300">Volume</a>
+        </li>
+
+    </ul>
+</div>
+<div>
+    <div className='flex justify-end'>
+    <div className='pt-2 pr-4'>
+                            <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="text-gray-900   focus:ring-4 focus:outline-none focus:ring-blue-50 font-medium rounded-lg text-sm px-2 py-1.5 text-center inline-flex items-center  border-gray-700 border " type="button">Filter by Assosiation <svg class="w-2 h-2 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+  </svg>
+</button>
+
+                            </div>
+                            <div className='pt-2 pr-2'>
+                            <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="text-gray-900   focus:ring-4 focus:outline-none focus:ring-blue-50 font-medium rounded-lg text-sm px-2 py-1.5 text-center inline-flex items-center  border-gray-700 border " type="button">Filter by Zone<svg class="w-2 h-2 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+  </svg>
+</button>
+
+                            </div>
+                            <div className='pt-2 pr-2'>
+                            <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="text-gray-900   focus:ring-4 focus:outline-none focus:ring-blue-50 font-medium rounded-lg text-sm px-2 py-1.5 text-center inline-flex items-center  border-gray-700 border " type="button">Filter by Account Type<svg class="w-2 h-2 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+  </svg>
+</button>
+
+                            </div>
+
+    </div>
+</div><div className=' w-full h-32 px-20 py-6'>
+    <LineChart />
+</div>
                     </div>
-                    <div className=' col-span-1 row-span-2 rounded-xl border-gray-100 border shadow-lg '>
+                    <div className=' col-span-1 row-span-3 rounded-xl border-gray-100 border shadow-lg '>
                         
                         <div className='pt-4 pl-4'>
                             <h1 className='p-1 font-display font-bold text-xl'>5 Greatest Transaction</h1>
@@ -339,6 +388,9 @@ function Dashboard() {
                         <div className='pt-4 pl-2'>
                         <button type="button" class="text-gray-700 bg-white  focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-2 py-1.5 mr-1 mb-1 border hover:bg-gray-700  hover:text-white border-gray-700 dark:bg-white dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 h-10 w-28">All Time</button>
                         </div>
+                        </div>
+                        <div className='w-full h-96 '>
+                            <MultipleBar />
                         </div>
                     </div>
 
