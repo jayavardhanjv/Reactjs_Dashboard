@@ -2,6 +2,7 @@
 // import './App.css';
 import SideNavbar from "./components/SideNavbar"
 import Dashboard from "./pages/Dashboard";
+import Manager from "./pages/Manager";
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
         <SideNavbar/>
       </div>
       <div className="col-span-2 pl-64">
-      <Dashboard />
+      <Manager />
       </div>
       
       

@@ -2,6 +2,7 @@ import { faSackDollar, faWallet } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import logo from "../assets/logo.png"
+import Areac from '../charts/Areac'
 import Bar from '../charts/Bar'
 import LineChart from '../charts/Linechart'
 import MultipleBar from '../charts/MultipleBar'
@@ -77,9 +78,7 @@ function Dashboard() {
             </div>
             </div>
             </div>
-        <div className='grid grid-rows-5  gap-4 pt-3'>
-
-            <div className='grid grid-cols-5 gap-1 h-40'>
+            <div className='grid grid-cols-5 gap-1 h-40 mt-2'>
                 <div className='col-span-2 bg-blue-50 h-40 rounded-xl '>
                     <div className='grid grid-cols-3'>
                         <div className='col-span-2'>
@@ -138,6 +137,9 @@ function Dashboard() {
                     </div>
             </div>
             </div>
+        <div className='grid grid-rows-5  gap-4 pt-2'>
+
+
             {/* main component */}
             <div className='row-span-6'>
                 <h1 className='p-1 font-display font-bold text-xl'>Consumer Overview</h1>
@@ -232,10 +234,10 @@ function Dashboard() {
                         </div>
                     </div>
                     <div className=' col-span-2 row-span-2  rounded-xl grid grid-rows-3 grid-cols-5 gap-1'>
-                        <div className=' row-span-2 col-span-2  rounded-xl border-gray-100 border z-40 shadow-sm'>
-                        <div className='pl-8 pt-5'>
+                        <div className=' row-span-2 col-span-2  rounded-xl border-gray-100 border z-40 shadow-sm flex'>
+                        <div className='pt-5 px-4'>
                             <h1 className=' font-display font-medium text-lg'>Total Earnings</h1>
-                            <h1 className=' font-display font-semibold text-3xl pt-2'>₹ 1,321,342</h1>
+                            <h1 className=' font-display font-semibold text-2xl pt-2'>₹ 1,321,342</h1>
                             <div className='pt-2'>
                             <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="text-gray-900   focus:ring-4 focus:outline-none focus:ring-blue-50 font-medium rounded-lg text-sm px-2 py-1.5 text-center inline-flex items-center  border-gray-700 border " type="button">Path Week <svg class="w-2 h-2 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
@@ -243,6 +245,9 @@ function Dashboard() {
 </button>
 
                             </div>
+                        </div>
+                        <div className='h-40 w-full flex items-center pl-7 pt-12'>
+                            <Areac />
                         </div>
                         </div>
                         <div className='  col-span-3 bg-green-100 rounded-xl border-gray-100 border z-40 shadow-sm'>
