@@ -2,6 +2,7 @@
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
+    'node_modules/preline/dist/*.js',
   ],
   theme: {
     extend: {},
@@ -9,6 +10,8 @@ module.exports = {
       display: ['Palanquin', 'sans-serif'],
     },
   },
-  plugins: [],
+  plugins: [
+    require('preline/plugin'),
+  ],
 }
 
