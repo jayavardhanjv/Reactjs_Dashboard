@@ -1,8 +1,9 @@
 import { faBell, faFileCsv, faFileExcel, faFilter, faFolder, faRotate, faSackDollar, faWallet } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-import logo from "../assets/logo.png"
+import logo from "../assets/header.png"
 import Areac from '../charts/Areac'
 import Bar from '../charts/Bar'
 import LineChart from '../charts/Linechart'
@@ -31,9 +32,9 @@ function Manager() {
   };
 
   return (
-    <div className='min-h-full bg-white p-6  '>
+    <div className='min-h-full bg-white p-6  min-w-full'>
         {/* navbar */}
-                    <div className='grid grid-cols-3 grid-rows-1 gap-3'>
+                    <div className='grid grid-cols-3 grid-rows-1 gap-3 w-full'>
                     <form>
           <div class="relative z-10 flex space-x-3 p-3 bg-blue-100 border rounded-full shadow-lg shadow-gray-100 ">
             <div class="flex-[1_0_0%]">
@@ -50,7 +51,7 @@ function Manager() {
           </div>
         </form>
 
-            <div class="flex align-middle gap-x-0.5 p-2">
+            <div class="flex align-middle gap-x-0.5 p-2 justify-end">
   
   <button class="ql-list w-8 h-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none " value="ordered" type="button">
   <span className=''><FontAwesomeIcon icon={faSackDollar}  /> </span> </button>
@@ -79,11 +80,11 @@ function Manager() {
             </div>
             </div>
             </div>
-            <div className='grid grid-cols-5 gap-2  mt-2'>
-                <div className='col-span-2 bg-blue-50  rounded-xl p-4'>
+            <div className='grid grid-cols-5 gap-2 mr-8 w-full'>
+                <div className='col-span-2 bg-blue-50  rounded-xl p-4 my-4'>
                     <div className='grid grid-cols-3'>
                         <div className='col-span-2'>
-                    <p className='px-6 py-6 text-sky-600 text-base font-display  font-medium'>Consumer {'>'} Manage Consumers</p>
+                    <p className='p-6 text-sky-600 text-base font-display  font-medium'><Link to="/">Consumer {'>'} Manage Consumers</Link></p>
                     <p className='px-6 text-gray-900 text-xl font-display  font-bold'>Actions</p>
                     <div className='grid grid-cols-2 p-2 pl-4'>
                     <button type="button" class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-gray-800 text-white hover:bg-gray-900 disabled:opacity-50 disabled:pointer-events-none ">
@@ -93,10 +94,10 @@ function Manager() {
 
                     </div>
                     </div>
-                    <img src={logo} alt="Logo" className='pt-4'/>;
+                    <img src={logo} alt="Logo" className='pt-4'/>
                     </div>
                 </div>
-                <div className='col-span-1 bg-orange-100 h-auto rounded-xl p-4'>
+                <div className='col-span-1 bg-orange-100 h-auto rounded-xl p-4 my-4'>
                     <div className='grid grid-rows-2'>
                         <div className='flex items-center'>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-orange-500">
@@ -105,41 +106,41 @@ function Manager() {
                         
 
 
-                            <h1 className='text-gray-800 font-medium text-xl p-4'>You have <span className="font-bold text-2xl">276</span><br/>kyc approval pending</h1>
+                            <h1 className='p-6 text-gray-900 text-xl font-display  font-bold'><span className="font-extrabold text-3xl">276</span>{'  '}kyc <br/>approval pending</h1>
                         </div>
                         <button type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-1 mb-1 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 h-10 w-28">View List</button>
                     </div>
                 </div>
-                <div className='col-span-1 bg-red-100 h-auto rounded-xl p-4'>
+                <div className='col-span-1 bg-red-100 h-auto rounded-xl p-4 my-4 '>
                 <div className='grid grid-rows-2'>
                         <div className='flex items-center'>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-red-700">
   <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
 </svg>
-                            <h1 className='text-gray-800 font-medium text-xl p-4'>There are <span className="font-bold text-2xl">182</span><br/>high risk customers</h1>
+                            <h1 className='p-6 text-gray-900 text-xl font-display  font-bold'><span className="font-extrabold text-3xl">182</span>{'  '}high <br/>risk customers</h1>
                         </div>
                         <button type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-1 mb-1 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 h-10 w-28">View List</button>
                     </div>
             </div>
-            <div className='col-span-1 bg-indigo-200 h-auto rounded-xl p-4'>
+            <div className='col-span-1 bg-indigo-200 h-auto rounded-xl p-4 my-4'>
             <div className='grid grid-rows-2'>
                         <div className='flex items-center'>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-800">
   <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
 </svg>
 
-                            <h1 className='text-gray-800 font-medium text-xl p-4'>There are <span className="font-bold text-2xl">32</span><br/>tickets open</h1>
+                            <h1 className='p-6 text-gray-900 text-xl font-display  font-bold'><span className="font-extrabold text-3xl">32</span>{'  '}tickets open</h1>
                         </div>
                         <button type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-1 mb-1 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 h-10 w-28">View List</button>
                     </div>
             </div>
             </div>
-        <div className='grid grid-rows-5  gap-4 pt-2'>
+        <div className='grid grid-rows-5  gap-4 pt-2 w-full'>
 
 
             {/* main component */}
-            <div className='row-span-6'>
-            <div class="bg-white p-4 rounded-md w-full ">
+
+            <div class="bg-white p-4 rounded-md min-w-full ">
             <h2 class="text-gray-600 font-semibold pb-4">Consumers Overview</h2>
 	<div class=" flex items-center justify-between pb-1">
     <div class="flex items-center justify-between">
@@ -1054,7 +1055,7 @@ function Manager() {
 		</div>
 	</div>
 
-            </div>
+
         </div>
         <Drawer isOpen={isOpen} setIsOpen={setIsOpen}></Drawer>
     </div>
